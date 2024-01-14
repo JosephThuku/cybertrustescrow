@@ -32,14 +32,12 @@ actor icpescrow {
 
   //escrow
   type Escrow = {
-   escrow_id: Nat;
-   escrow_address: Text;
-   coin_symbol: Text;
-   balance: Nat;
-   wallet_address: Text;
-   from_wallet: Wallet;
-   to_wallet: Wallet;
-};
+    escrow_id: Nat;
+    escrow_address: Text;
+    coin_symbol: Text;
+    balance: Nat;
+    wallet_address: Text;
+  };
 
   //user
   type User = {
@@ -57,7 +55,6 @@ actor icpescrow {
  timestamp: Time.Time;
 };
 
-var transactionHistory : [Transaction] = [];
 
 
   // Function to generate wallet address
@@ -171,19 +168,4 @@ public func releaseMoneyFromEscrowToUser1Wallet(wallet: Wallet1, escrow: Escrow,
   let updatedEscrow = { escrow with balance = escrow.balance - amount };
   return { escrow with wallet = updatedEscrow };
 };
-
-// public func sendcoinFromWalletToEscrow(wallet: Wallet, escrow: Escrow, amount: Nat): async Escrow {
-//  let updatedWallet = { wallet with balance = wallet.balance - amount };
-//  let updatedEscrow = { escrow with balance = escrow.balance + amount };
-//  let now = Time.now();
-//  let from = wallet.wallet_address;
-//  let To = escrow.wallet_address;
-//  let amount = amount;
-
-//  let transaction = {transaction_id = 1; from_wallet = wallet; to_wallet = escrow; amount; timestamp = now};
-//  transactionHistory := Array.append<Transaction>(transactionHistory, [transaction]);
-//  return { escrow with wallet = updatedEscrow };
-// };
-
-
 };
