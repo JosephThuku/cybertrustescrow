@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>icpescrow</title>
+    <style>
+      *,html,body{
+        margin:0;
+        padding:0;
+        
+      }
+      body{
+        background-color: #f6fafd;
+        
+      }
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      .header_top1{
+        max-width:100% !important;
+        background-color: #fff;
+      }
+      .header{
+        max-width: 1000px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+      .header_top{
+        margin-top: 20px;
+      }
+      .header_sign{
+        display: flex;
+        justify-items: between;
+        row-gap: 30px;
+      }
+      .header_sign_tag{
+        margin-right: 20px !important;
+      }
+     .main{
+      background-color: white;
+      width: 50%;
+      margin-inline: auto;
+      margin-top: 40px;
+      border-radius: 3px;
+      padding-bottom: 50px;
+     }
+     .form_header{
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 20px;
+      color: gray;
+      font-size: 1.5rem;
+     }
+     .form_email{
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin-inline: auto;
+     }
+     .form_password{
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin-inline: auto;
+     }
+     label{
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 1.1px;
+      margin-bottom: 10px;
+     }
+     input{
+      margin-bottom: 10px;
+      padding-block: 5px;
+     }
+     input:focus{
+      border: 1px solid black;
+     }
+     .form_or{
+      width: 60%;
+      margin-inline: auto;
+      text-align: center;
+      background-color: #42c31d;
+      color: white;
+      padding-block: 6px;
+      border-radius: 4px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      cursor: pointer;
+     }
+     .or{
+      width: 60%;
+      margin-inline: auto;
+      text-align: center;
+      font-size: 1rem; 
+      margin-block: 10px;
+      font-weight: 100;
+      letter-spacing: 1px;
+     }
+     .form_register{
+      width: 60%;
+      margin-inline: auto;
+      text-align: center;
+      border: 1px solid red;
+      margin-bottom: 60px;
+      
+      border: 1px solid #c2e88b;
+      padding-block: 8px;
+      border-radius: 4px;
+     }
+     .form_register a{
+      color: #c2e88b;
+      }
+      .footer1{
+        background-color: #fff;
+      }
+      footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block: 20px;
+        max-width: 1000px;
+        margin-inline: auto;
+      }
+      .footer_right{
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 100;
+        font-size: 10px;
+        font-family: sans-serif;
+      }
+      #para{
+      width: 50%;
+      margin-inline: auto;
+      text-align: left;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="header_top1">
+    <header class="header">
+      <div class="header_top">
+        <a href="index.html" class="header_anchor">
+         <img src="../assets/th-removebg-preview.png" alt="" width="100" height="100">
+        </a>
+      </div>
+      <div class="header_sign">
+        <a  href="login.html" class="header_sign_tag">Login</a>
+        <a href="sign.html">Signup</a>
+      </div>
+    </header>
+  </div>
+    <main class="main">
+      <form class="form" id="myform">
+        <h1 class="form_header">Create an account on Yellow Pay</h1>
+        <div class="form_email">
+          <label for="email">PLEASE ENTER YOUR EMAIL ADDRESS<span style="color:red;">*</span></label>
+          <input type="email" required value="" id="email" name="email" placeholder="email"/>
+        </div>
+        <div class="form_password">
+          <label for="password">PLEASE ENTER YOUR EMAIL PASSWORD<span style="color:red;">*</span></label>
+          <input type="password" required value="" id="password" name="password" placeholder="password"/>
+        </div>
+        <p id="para" style="color: red;"></p>
+        <div class="form_or"  onclick="submitForm()">
+          <p>Sign Up</p>
+        </div>
+        <p class="or">By registering you agree to Yelow Pay <span style="color: rgb(176, 176, 197);cursor: pointer;">Terms </span>and<span style="color: rgb(176, 176, 197);cursor: pointer;"> condtions</span></p>
+        <div class="form_register">
+          <a href="login.html">Login To Yellow Pay</a>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="footer_left">
+        <img src="../assets/th-removebg-preview.png" alt="" width="100" height="100">
+      </div>
+      <div class="footer_right">
+        <h1 style="margin-right: 20px; cursor: pointer; color: grey;font-weight: 100; letter-spacing: 1px;">Privancy</h1>
+        <h1 style="cursor: pointer; color: grey; font-weight: 100; letter-spacing: 1px;">Terms & Conditions</h1>
+      </div>
+    </footer>
+    <script>
+      function submitForm() {
+             // Get the form element
+             var form = document.getElementById("myform");
+             var para = document.getElementById("para");
+             var email=form.elements["email"].value;
+             var password=form.elements["password"].value;
+             if(email===""||password===""){
+              para.innerHTML="fill correct credentials"
+              return;
+            }
+            else{
+              var email1=email
+              var password1=password
+              para.innerHTML=""
+              email.innerHTML=""
+              password.innerHTML=""
+              console.log(email1,password1)
+            }
+             
+         }
+    </script>
+  </body>
+</html>

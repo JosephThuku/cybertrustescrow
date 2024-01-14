@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>icpescrow</title>
+    <style>
+      *,html,body{
+        margin:0;
+        padding:0;
+        
+      }
+      body{
+        background-color: #002b49;
+        max-width: 1000px;
+        margin-inline: auto;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+      }
+      .header{
+       
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header_top{
+        margin-top: 20px;
+      }
+      .header_sign{
+        display: flex;
+        justify-items: between;
+        row-gap: 30px;
+      }
+      .header_sign_tag{
+        margin-right: 20px !important;
+      }
+      .main{
+        margin-top: 100px;
+        width: 100%;
+        color: white;
+        display: flex;
+      }
+      .main_right{
+        width:60%;
+        font-family: sans-serif;
+      }
+      .main_right h1{
+
+        font-weight: 600;
+        font-size: 2.4rem;
+      }
+      .main_right p{
+        margin-top: 10px;
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
+      .main_left{
+        border: 1px solid red;
+        width: 35%;
+        height:350px;
+      }
+      .main_start{
+        background-color: #11af4b;
+        width:150px;
+        text-align: center;
+        border-radius: 3px;
+        border-color: #11af4b;
+        margin-top: 80px;
+        padding-block: 10px;
+        inset: 2px;
+
+      }
+      .main_start a{
+        color: white;
+        letter-spacing: 1px;
+        
+      }
+      footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block: 20px;
+      }
+      .footer_right{
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 100;
+        font-size: 10px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_left">
+        <a>
+            <img src="../assets/th-removebg-preview.png" alt="" width="100" height="100">
+        </a>
+      </div>
+      <div class="header_sign">
+        <a href="login.html" onclick="navigateLogin('/login.html')" class="header_sign_tag">Login</a>
+        <a href="/">Signup</a>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main_right">
+        <h1>Enjoy peace of mind when you buy or sell online</h1>
+        <p>With our online services,you can buy your products or services safely without worrying about being scammed</p>
+        <div class="main_start">
+          <a href="login.html">
+            Get Started Now
+          </a>
+        </div>
+        
+      </div>
+      <div class="main_left">
+        <img src="../assets/useravatar.jpeg">
+      </div>
+    </main>
+    <footer>
+      <div class="footer_left">
+        <a href="/">
+          <img src="../assets/th-removebg-preview.png" alt="" width="100" height="100">
+      </a>
+      </div>
+      <div class="footer_right">
+        <h1 style="margin-right: 20px; cursor: pointer;">Privancy</h1>
+        <h1 style="cursor: pointer;">Terms & Conditions</h1>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+</html>

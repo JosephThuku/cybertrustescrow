@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "icpescrow_backend": {
+      "main": "src/icpescrow_backend/main.mo",
+      "type": "motoko"
+    },
+    "icpescrow_frontend": {
+      "dependencies": [
+        "icpescrow_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/icpescrow_frontend/src/index.html"
+      },
+      "source": [
+        "src/icpescrow_frontend/assets",
+        "dist/icpescrow_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

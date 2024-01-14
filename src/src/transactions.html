@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,html,body{
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        body{
+            height: 100vh;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            max-width: 1000px;
+            margin-inline: auto;
+        }
+        .header_right{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .main{
+            max-width: 1000px;
+            margin-inline: auto;
+            margin-top: 30px;            
+        }
+        .form_main{
+            display: flex;
+            align-items: center;
+        }
+        .select{
+            padding-block: 10px;
+            color: rgb(132, 132, 167);
+            margin-inline: 20px;
+            
+        }
+        .at{
+            margin-left: 10px;
+        }
+        .fee{
+            margin-top: 100px;
+            color: #11af4b;
+        }
+        .pro{
+            background-color: #11af4b;
+            width: 100px;
+            color: white;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+        .pro p{
+            text-align: center;
+            padding-block: 10px;
+            border-radius: 18px;
+        }
+        #amount{
+        margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header_left">
+            <a href="index.html">
+                <img src="../assets/th-removebg-preview.png" alt="" width="100" height="100">
+            </a>
+        </div>
+        <div class="header_right">
+            <a href="dashboard.html" style="margin-right: 10px;">Dashbord</a>
+            <a href="transactions.html"  style="margin-right: 10px;">Transactions</a>
+            <a href="index.html" >Logout</a>
+        </div>
+    </header>
+    <main class="main">
+        <h1 style="margin-bottom: 40px;">New Transactions</h1>
+        <div>
+            <div class="form_main" >
+                <h1  style="background-color: rgb(141, 141, 246); width: 100px; color: white; font-size: 1.7rem; font-weight: 100; text-align: center; padding-block:5px ; border-radius: 5px;">I AM</h1>
+                <form id="myform">
+                    <select name="option" id="option" class="select">
+                        <option value="Buying" selected>Buying</option>
+                        <option value="Selling">Selling</option>
+                    </select>
+                </form>
+                <h1>
+                    FTC Coins
+                </h1>
+                <h1 class="at">
+                    AT
+                </h1>
+                <form id="myform2">
+                   <input type="text" id="amount" name="price" placeholder="amount" required/>
+                </form>
+            </div>
+            <p class="fee"  id="ffe">Fee <span>ksh0.00</span></p>
+            <div class="pro" style="cursor: pointer;" onclick="submitForm()">
+                <p>Proceed</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        function submitForm() {
+            // Get the form element
+            var selected= document.getElementById("option");
+            var pt= document.getElementById("ffe");
+             var form2 = document.getElementById("myform2");
+           const selectedValue=selected.value
+           const amount=form2.elements["price"].value;
+           pt.innerHTML=`ksh ${amount}.00`
+           console.log(selectedValue,amount)
+            }
+            // Submit the form
+            if(amount!==""){
+                //window.location.href = "dashboard.html";
+            }
+        
+    </script>
+</body>
+</html>
